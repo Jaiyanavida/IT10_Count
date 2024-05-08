@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Number Manipulation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Manipulation</title>
 </head>
 <style>
-    #txt-count{
-        font-size: 100px;
-        color: blueviolet;
-    }
+    #txt-count {
+        font-size: 5em;
+        color:blueviolet;
+      }
+
 </style>
 <body>
-  <p id="textCount">0</p>
-  
-  <button onclick="resetNumber()">Reset</button>
-  <button onclick="increaseNumber()">Increase</button>
-  <button onclick="decreaseNumber()">Decrease</button>
-
-  <script>
-    let number = 0;
-
-    function displayNumber() {
-      document.getElementById('numberDisplay').innerText = number;
-    }
-
-    function resetNumber() {
-      number = 0;
-      displayNumber();
-    }
-
-    function increaseNumber() {
-      number++;
-      displayNumber();
-    }
-
-    function decreaseNumber() {
-      number--;
-      displayNumber();
-    }
-
-    displayNumber();
-  </script>
+    <label id = "txt-count">0</label>
+    <br>
+    <button id = "btn-reset">Reset</button>
+    <button id = "btn-increase">Increase</button>
+    <button id = "btn-decrease">Descrease</button>
 </body>
-</html>
 
+    <!--Java Script-->
+<script>
+    const txtCount = document.querySelector("#txt-count")
+    const btnReset = document.querySelector("#btn-reset")
+    const btnIncrease = document.querySelector("#btn-increase")
+    const btnDecrease = document.querySelector("#btn-decrease")
+
+    let count = txtCount.textContent
+    btnIncrease.addEventListener("click", function(){
+        txtCount.textContent = count++
+    })
+    btnDecrease.addEventListener("click", function(){
+        txtCount.textContent = count--
+    })
+    btnReset.addEventListener("click", function(){
+        count = 0
+        txtCount.textContent = count
+    })    
+</script>
+</html>
